@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh './mvnw clean compile'
+                sh './mvn clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh './mvnw test'
+                sh './mvn test'
             }
             post {
                 always {
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Package') {
             steps {
-                sh './mvnw package -DskipTests'
+                sh './mvn package -DskipTests'
             }
         }
         stage('Archive Artifacts') {
