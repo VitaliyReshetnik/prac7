@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prac7-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prac7
+  template:
+    metadata:
+      labels:
+        app: prac7
+    spec:
+      containers:
+        - name: prac7-container
+          image: prac7-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
